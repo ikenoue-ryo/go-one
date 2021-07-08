@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"go-one/app/controllers"
+)
 
 func main() {
-	fmt.Println("Hello World")
+	controllers.StartMainServer()
 }
