@@ -18,5 +18,6 @@ func generateHTML(writer http.ResponseWriter, data interface{}, filenames ...str
 
 func StartMainServer() error {
 	http.HandleFunc("/", top)
+	http.HandleFunc("/index", index)
 	return http.ListenAndServe(":8080", nil)
 }
