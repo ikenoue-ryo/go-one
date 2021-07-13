@@ -17,6 +17,9 @@ func generateHTML(writer http.ResponseWriter, data interface{}, filenames ...str
 }
 
 func StartMainServer() error {
+	files := http.FileServer(http.Dir("app/views/img"))
+	http.Handle("/static/", http.StripPrefix("/static/", files))
+
 	http.HandleFunc("/", top)
 	http.HandleFunc("/index", index)
 	return http.ListenAndServe(":8080", nil)
