@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"fmt"
+	"go-one/config"
 	"html/template"
 	"net/http"
 )
@@ -22,5 +23,5 @@ func StartMainServer() error {
 
 	http.HandleFunc("/", top)
 	http.HandleFunc("/index", index)
-	return http.ListenAndServe(":8080", nil)
+	return http.ListenAndServe(":"+config.Config.Port, nil)
 }
