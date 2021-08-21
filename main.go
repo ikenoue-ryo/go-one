@@ -1,18 +1,21 @@
 package main
 
-import "go-one/app/controllers"
+import (
+	"fmt"
+	"go-one/app/models"
+)
 
 func main() {
-	controllers.StartMainServer()
-	// fmt.Println(models.Db)
+	fmt.Println(models.Db)
+	// controllers.StartMainServer()
 
-	// t := &models.Todo{}
-	// t.Content = "test content"
-	// t.UserID = 1
-	// fmt.Println(t)
+	u := &models.User{}
+	u.Name = "test1"
+	u.Email = "test1@gmail.com"
+	u.PassWord = "test1"
+	fmt.Println(u)
 
-	// u := &models.User{}
-	// u.Name = "ryo"
-	// u.Email = "ryo@gmail.com"
-	// u.CreateTodo("First todo")
+	u.CreateUser()
+	fmt.Println(u)
+
 }
