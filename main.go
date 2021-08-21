@@ -7,15 +7,17 @@ import (
 
 func main() {
 	fmt.Println(models.Db)
+
+	// u := &models.User{}
+	// u.Name = "test"
+	// u.Email = "test@gmail.com"
+	// u.PassWord = "pass"
+	// fmt.Println(u)
+
+	// u.CreateUser()
+
+	u, _ := models.GetUser(1)
+	fmt.Println(u)
 	// controllers.StartMainServer()
-
-	u := &models.User{}
-	u.Name = "test1"
-	u.Email = "test1@gmail.com"
-	u.PassWord = "test1"
-	fmt.Println(u)
-
-	u.CreateUser()
-	fmt.Println(u)
 
 }
