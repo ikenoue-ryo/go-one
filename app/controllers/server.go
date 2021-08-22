@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"fmt"
+	"go-one/app/models"
 	"go-one/config"
 	"html/template"
 	"net/http"
@@ -17,12 +18,23 @@ func generateHTML(writer http.ResponseWriter, data interface{}, filenames ...str
 	templates.ExecuteTemplate(writer, "layout", data)
 }
 
+func session(w http.ResponseWriter, r *http.Request) (sess models.Session, err error) {
+	cookie, err := r.Cookie("_cookie")
+	if err == nil {
+		sess = models.Session{UUID: cookie.Value}
+		if ok, _ := sess.CheckSession(); !ok {
+			err = fmt.Errorf("Invalid session")
+		}
+	}
+	return sess, err
+}
+
 func StartMainServer() error {
 	files := http.FileServer(http.Dir("app/views/img"))
 	http.Handle("/static/", http.StripPrefix("/static/", files))
 
 	http.HandleFunc("/", top)
-	http.HandleFunc("/index", index)
+	http.HandleFunc("/todos", index)
 	http.HandleFunc("/signup", signup)
 	http.HandleFunc("/login", login)
 	http.HandleFunc("/authenticate", authenticate)
