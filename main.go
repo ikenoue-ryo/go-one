@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"go-one/app/controllers"
 	"go-one/app/models"
 )
 
@@ -31,5 +30,28 @@ func main() {
 	// u, _ = models.GetUser(1)
 	// fmt.Println(u)
 
-	controllers.StartMainServer()
+	// controllers.StartMainServer()
+	// user, _ := models.GetUser(2)
+	// user.CreateTodo("Second todo")
+
+	// t, _ := models.GetTodo(1)
+	// fmt.Println(t)
+
+	// todos, _ := models.GetTodos()
+	// for _, v := range todos {
+	// 	fmt.Println(v)
+	// }
+
+	// user, _ := models.GetUser(2)
+	// todos, _ := user.GetTodosByUser()
+	// for _, v := range todos {
+	// 	fmt.Println(v)
+	// }
+
+	// t, _ := models.GetTodo(1)
+	// t.Content = "Update Todo"
+	// t.UpdateTodo()
+
+	t, _ := models.GetTodo(2)
+	t.DeleteTodo()
 }
