@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-one/app/controllers"
 	"go-one/app/models"
 )
 
@@ -30,7 +31,7 @@ func main() {
 	// u, _ = models.GetUser(1)
 	// fmt.Println(u)
 
-	// controllers.StartMainServer()
+	controllers.StartMainServer()
 	// user, _ := models.GetUser(2)
 	// user.CreateTodo("Second todo")
 
@@ -52,6 +53,6 @@ func main() {
 	// t.Content = "Update Todo"
 	// t.UpdateTodo()
 
-	t, _ := models.GetTodo(2)
-	t.DeleteTodo()
+	// t, _ := models.GetTodo(2)
+	// t.DeleteTodo()
 }

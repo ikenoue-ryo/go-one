@@ -1,7 +1,16 @@
 {{define "content"}}
   <h1>index</h1>
-  {{.}}
+  <a href="/todos/new">Create</a>
+  <hr>
 
-  USER Name: {{.Name}}
+  <p>Name: {{.Name}}</p>
+  <p>Email: {{.Email}}</p>
+  <p>Create: {{.CreatedAt}}</p>
   <img src="static/go1.png" width="300" height="auto" alt="">
+
+  <hr>
+  {{ range .Todos }}
+  <p>{{ .Content }}</p>
+  <hr>
+  {{ end }}
 {{end}}
