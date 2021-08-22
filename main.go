@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-one/app/controllers"
 	"go-one/app/models"
 )
 
@@ -25,11 +26,11 @@ func main() {
 	// u, _ = models.GetUser(1)
 	// fmt.Println(u)
 
-	u, _ := models.GetUser(1)
-	u.DeleteUser()
-	u, _ = models.GetUser(1)
-	fmt.Println(u)
+	// u, _ := models.GetUser(1)
+	// u.DeleteUser()
+	// u, _ = models.GetUser(1)
+	// fmt.Println(u)
 
-	// controllers.StartMainServer()
+	controllers.StartMainServer()
 
 }
