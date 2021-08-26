@@ -11,6 +11,8 @@
   <hr>
   {{ range .Todos }}
   <p>{{ .Content }}</p>
+  <p>[<a href="/todos/edit/{{.ID}}">Edit</a>]</p>
+  
   <hr>
   {{ end }}
 {{end}}
