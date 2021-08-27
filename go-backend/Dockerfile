@@ -1,8 +1,8 @@
 FROM golang:latest
 
-WORKDIR /usr/local/go/src/go-one
+WORKDIR /usr/local/go/src/go-one/go-backend
 
-ADD . /usr/local/go/src/go-one
+ADD . /usr/local/go/src/go-one/go-backend
 
 RUN go get gopkg.in/ini.v1 && \
   go get github.com/google/uuid && \

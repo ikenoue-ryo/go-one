@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"fmt"
-	"go-one/app/models"
-	"go-one/config"
+	"go-one/go-app/app/models"
+	"go-one/go-app/config"
 	"html/template"
 	"net/http"
 	"regexp"

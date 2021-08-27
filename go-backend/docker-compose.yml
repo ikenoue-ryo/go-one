@@ -1,0 +1,9 @@
+version: '3'
+services:
+  app:
+    build: .
+    tty: true
+    volumes:
+      - .:/usr/local/go/src/go-one/go-backend
+    ports:
+      - "8888:8888"

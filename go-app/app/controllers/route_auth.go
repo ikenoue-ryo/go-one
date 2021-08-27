@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"go-one/app/models"
+	"go-one/go-app/app/models"
 	"log"
 	"net/http"
 )

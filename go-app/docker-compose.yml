@@ -4,6 +4,6 @@ services:
     build: .
     tty: true
     volumes:
-      - .:/usr/local/go/src/go-one
+      - .:/usr/local/go/src/go-one/go-app
     ports:
       - "8080:8080"
