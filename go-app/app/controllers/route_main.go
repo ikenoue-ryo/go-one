@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"fmt"
-	"go-one/app/models"
+	"go-one/go-app/app/models"
 	"log"
 	"net/http"
 )

@@ -4,7 +4,7 @@ import (
 	"crypto/sha1"
 	"database/sql"
 	"fmt"
-	"go-one/config"
+	"go-one/go-app/config"
 	"log"
 
 	"github.com/google/uuid"

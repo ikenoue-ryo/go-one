@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"go-one/app/controllers"
-	"go-one/app/models"
+	"go-one/go-app/app/controllers"
+	"go-one/go-app/app/models"
 )
 
 func main() {
