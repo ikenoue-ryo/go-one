@@ -9,7 +9,7 @@ import (
 )
 
 func task(w http.ResponseWriter, r *http.Request) {
-	url := "http://host.docker.internal:8888/tasks"
+	url := "http://host.docker.internal:8888/api/tasks"
 
 	response, err := http.Get(url)
 	if err != nil {

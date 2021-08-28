@@ -6,6 +6,6 @@ import (
 )
 
 func StartMainApiServer() error {
-	http.HandleFunc("/tasks", models.TaskHandler)
+	http.HandleFunc("/api/tasks", models.TaskHandler)
 	return http.ListenAndServe(":8888", nil)
 }
