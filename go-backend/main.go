@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"go-one/go-backend/controllers"
+)
 
 func main() {
-	fmt.Println("Hello Backend")
+	controllers.StartMainApiServer()
 }
