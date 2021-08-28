@@ -3,9 +3,32 @@ package controllers
 import (
 	"fmt"
 	"go-one/go-app/app/models"
+	"io/ioutil"
 	"log"
 	"net/http"
 )
+
+func task(w http.ResponseWriter, r *http.Request) {
+	url := "http://host.docker.internal:8888/api/tasks"
+
+	response, err := http.Get(url)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	defer response.Body.Close()
+
+	body, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	fmt.Println(string(body))
+
+	tasks := string(body)
+
+	generateHTML(w, tasks, "layout", "public_navbar", "task")
+}
 
 func top(w http.ResponseWriter, r *http.Request) {
 	_, err := session(w, r)
