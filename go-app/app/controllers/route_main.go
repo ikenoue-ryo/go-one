@@ -8,8 +8,8 @@ import (
 	"net/http"
 )
 
-func task(w http.ResponseWriter, r *http.Request) {
-	url := "http://host.docker.internal:8888/api/tasks"
+func category(w http.ResponseWriter, r *http.Request) {
+	url := "http://host.docker.internal:1323/category"
 
 	response, err := http.Get(url)
 	if err != nil {
@@ -25,9 +25,9 @@ func task(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Println(string(body))
 
-	tasks := string(body)
+	categories := string(body)
 
-	generateHTML(w, tasks, "layout", "public_navbar", "task")
+	generateHTML(w, categories, "layout", "public_navbar", "task")
 }
 
 func top(w http.ResponseWriter, r *http.Request) {

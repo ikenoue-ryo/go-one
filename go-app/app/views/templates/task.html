@@ -1,4 +1,10 @@
 {{define "content"}}
   <h1>task</h1>
-  {{.}}
+  <!-- {{.}} -->
+
+  {{ range .slice }}
+  {{. }}
+{{ end }}
+
+
 {{end}}
