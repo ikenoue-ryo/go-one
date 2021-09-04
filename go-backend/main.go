@@ -7,14 +7,6 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-// import (
-// 	"go-one/go-backend/controllers"
-// )
-
-// func main() {
-// 	controllers.StartMainApiServer()
-// }
-
 type Category struct {
 	Id   int    `json:"id" param:"id"`
 	Name string `json:"name"`
@@ -39,8 +31,29 @@ var categories = []Category{
 	},
 }
 
+type User struct {
+	Id    int    `json:"id" param:"id"`
+	Name  string `json:"name"`
+	Email string `json:"email"`
+}
+
 func getCategory(c echo.Context) error {
 	return c.JSON(http.StatusOK, categories)
+}
+
+func getUsers(c echo.Context) error {
+	users := []User{}
+	database.DB.Find(&users)
+	return c.JSON(http.StatusOK, users)
+}
+
+func createUser(c echo.Context) error {
+	user := User{}
+	if err := c.Bind(&user); err != nil {
+		return err
+	}
+	database.DB.Create(&user)
+	return c.JSON(http.StatusCreated, user)
 }
 
 func main() {
@@ -50,6 +63,8 @@ func main() {
 	defer sqlDB.Close()
 
 	e.GET("/category", getCategory)
+	e.GET("/users", getUsers)
+	e.POST("/users", createUser)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }

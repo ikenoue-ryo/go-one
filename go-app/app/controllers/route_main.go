@@ -9,7 +9,7 @@ import (
 )
 
 func category(w http.ResponseWriter, r *http.Request) {
-	url := "http://host.docker.internal:1324/category"
+	url := "http://host.docker.internal:1323/category"
 
 	response, err := http.Get(url)
 	if err != nil {
