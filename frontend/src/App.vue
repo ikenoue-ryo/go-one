@@ -1,15 +1,9 @@
 <template>
-  <categories />
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/users">Users</router-link>
+    </div>
+    <router-view/>
+  </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "@vue/composition-api";
-import categories from './components/categories.vue';
-
-export default defineComponent({
-  name: 'App',
-  components: {
-    categories
-  }
-});
-</script>
